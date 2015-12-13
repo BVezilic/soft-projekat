@@ -1,0 +1,3 @@
+# soft-projekat
+
+PokerBot
