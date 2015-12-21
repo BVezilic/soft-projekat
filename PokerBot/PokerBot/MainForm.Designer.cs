@@ -35,6 +35,7 @@
             this.btnCapture = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
+            this.btnRecognize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -42,10 +43,11 @@
             // pbCamera
             // 
             this.pbCamera.BackColor = System.Drawing.Color.Black;
-            this.pbCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbCamera.Location = new System.Drawing.Point(12, 12);
             this.pbCamera.Name = "pbCamera";
             this.pbCamera.Size = new System.Drawing.Size(375, 250);
+            this.pbCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCamera.TabIndex = 0;
             this.pbCamera.TabStop = false;
             // 
@@ -57,6 +59,7 @@
             this.pbPicture.Location = new System.Drawing.Point(397, 12);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(375, 250);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 1;
             this.pbPicture.TabStop = false;
             // 
@@ -100,11 +103,21 @@
             this.btnDisconnect.UseVisualStyleBackColor = true;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
+            // btnRecognize
+            // 
+            this.btnRecognize.Location = new System.Drawing.Point(697, 269);
+            this.btnRecognize.Name = "btnRecognize";
+            this.btnRecognize.Size = new System.Drawing.Size(75, 23);
+            this.btnRecognize.TabIndex = 7;
+            this.btnRecognize.Text = "Recognize";
+            this.btnRecognize.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnRecognize);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.btnCapture);
@@ -131,6 +144,7 @@
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
+        private System.Windows.Forms.Button btnRecognize;
     }
 }
 

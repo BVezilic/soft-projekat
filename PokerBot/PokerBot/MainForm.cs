@@ -23,6 +23,7 @@ namespace PokerBot
             InitializeComponent();
         }
 
+        #region Kamera
         private void MainForm_Load(object sender, EventArgs e)
         {
             VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -44,7 +45,7 @@ namespace PokerBot
                 FinalVideo.Start();
                 connectControls();
             }
-            catch (ArgumentOutOfRangeException r)
+            catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Izaberite kameru!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -90,5 +91,6 @@ namespace PokerBot
             btnDisconnect.Enabled = false;
             btnCapture.Enabled = false;
         }
+        #endregion
     }
 }
