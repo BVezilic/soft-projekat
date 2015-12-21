@@ -32,15 +32,22 @@ namespace PokerBot
                 cbCameras.Items.Add(VideoCaptureDevice.Name);
             }
 
-            cbCameras.SelectedIndex = 0;
-            FinalVideo = new VideoCaptureDevice();
+            FinalVideo = new VideoCaptureDevice();    
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[cbCameras.SelectedIndex].MonikerString);
-            FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
-            FinalVideo.Start();             
+            try
+            {
+                FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[cbCameras.SelectedIndex].MonikerString);
+                FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
+                FinalVideo.Start();
+                connectControls();
+            }
+            catch (ArgumentOutOfRangeException r)
+            {
+                MessageBox.Show("Izaberite kameru!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FinalVideo_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -57,7 +64,31 @@ namespace PokerBot
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
+            pbPicture.Image = (Image)pbCamera.Image.Clone();
+        }
+
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
             FinalVideo.SignalToStop();
+            disconnectControls();
+        }
+
+        private void connectControls()
+        {
+            btnConnect.Enabled = false;
+            cbCameras.Enabled = false;
+
+            btnDisconnect.Enabled = true;
+            btnCapture.Enabled = true;
+        }
+
+        private void disconnectControls()
+        {
+            btnConnect.Enabled = true;
+            cbCameras.Enabled = true;
+
+            btnDisconnect.Enabled = false;
+            btnCapture.Enabled = false;
         }
     }
 }

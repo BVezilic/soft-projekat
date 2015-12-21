@@ -42,7 +42,7 @@
             // pbCamera
             // 
             this.pbCamera.BackColor = System.Drawing.Color.Black;
-            this.pbCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbCamera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbCamera.Location = new System.Drawing.Point(12, 12);
             this.pbCamera.Name = "pbCamera";
             this.pbCamera.Size = new System.Drawing.Size(375, 250);
@@ -51,6 +51,7 @@
             // 
             // pbPicture
             // 
+            this.pbPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbPicture.BackColor = System.Drawing.Color.Black;
             this.pbPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPicture.Location = new System.Drawing.Point(397, 12);
@@ -69,6 +70,7 @@
             // 
             // btnCapture
             // 
+            this.btnCapture.Enabled = false;
             this.btnCapture.Location = new System.Drawing.Point(312, 268);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(75, 25);
@@ -89,12 +91,14 @@
             // 
             // btnDisconnect
             // 
+            this.btnDisconnect.Enabled = false;
             this.btnDisconnect.Location = new System.Drawing.Point(231, 268);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(75, 25);
             this.btnDisconnect.TabIndex = 6;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
             // MainForm
             // 

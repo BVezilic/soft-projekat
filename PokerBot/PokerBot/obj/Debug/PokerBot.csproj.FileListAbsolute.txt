@@ -13,3 +13,18 @@ c:\users\bane vezilic\documents\visual studio 2013\Projects\PokerBot\PokerBot\ob
 c:\users\bane vezilic\documents\visual studio 2013\Projects\PokerBot\PokerBot\obj\Debug\PokerBot.csproj.GenerateResource.Cache
 c:\users\bane vezilic\documents\visual studio 2013\Projects\PokerBot\PokerBot\obj\Debug\PokerBot.exe
 c:\users\bane vezilic\documents\visual studio 2013\Projects\PokerBot\PokerBot\obj\Debug\PokerBot.pdb
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\PokerBot.exe.config
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.exe
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.pdb
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\PokerBot.exe
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\PokerBot.pdb
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Controls.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Imaging.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Math.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Video.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csprojResolveAssemblyReference.cache
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.MainForm.resources
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.Properties.Resources.resources
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csproj.GenerateResource.Cache
