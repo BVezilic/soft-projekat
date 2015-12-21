@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
 
 using AForge.Video;
 using AForge.Video.DirectShow;
@@ -92,5 +94,12 @@ namespace PokerBot
             btnCapture.Enabled = false;
         }
         #endregion
+
+        private void btnRecognize_Click(object sender, EventArgs e)
+        {
+            var ipy = Python.CreateRuntime();
+            dynamic test = ipy.UseFile("Test.py");
+            test.Simple();
+        }
     }
 }
