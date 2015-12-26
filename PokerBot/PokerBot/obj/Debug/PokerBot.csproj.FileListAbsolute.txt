@@ -21,8 +21,8 @@ C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.dll
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Video.DirectShow.dll
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\AForge.Video.dll
-C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csprojResolveAssemblyReference.cache
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.MainForm.resources
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.Properties.Resources.resources
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csproj.GenerateResource.Cache
 C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\Test.py
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csprojResolveAssemblyReference.cache

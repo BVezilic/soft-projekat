@@ -74,6 +74,7 @@ namespace PokerBot
         {
             FinalVideo.SignalToStop();
             disconnectControls();
+            pbCamera.Image = null;
         }
 
         private void connectControls()
@@ -93,13 +94,13 @@ namespace PokerBot
             btnDisconnect.Enabled = false;
             btnCapture.Enabled = false;
         }
-        #endregion
 
         private void btnRecognize_Click(object sender, EventArgs e)
         {
             var ipy = Python.CreateRuntime();
             dynamic test = ipy.UseFile("Test.py");
-            test.Simple();
+            test.ocr();
         }
+        #endregion
     }
 }

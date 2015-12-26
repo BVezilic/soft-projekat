@@ -105,6 +105,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images1\brojevi.png" />
+    <Content Include="images1\test.png" />
     <Content Include="lib\AForge.dll" />
     <Content Include="lib\AForge.Video.DirectShow.dll" />
     <Content Include="lib\AForge.Video.dll" />
@@ -112,6 +114,7 @@
     <Content Include="lib\Microsoft.Dynamic.dll" />
     <Content Include="lib\Microsoft.Scripting.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
