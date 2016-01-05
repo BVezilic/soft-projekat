@@ -105,6 +105,7 @@
             // 
             // btnRecognize
             // 
+            this.btnRecognize.Enabled = false;
             this.btnRecognize.Location = new System.Drawing.Point(697, 269);
             this.btnRecognize.Name = "btnRecognize";
             this.btnRecognize.Size = new System.Drawing.Size(75, 23);
