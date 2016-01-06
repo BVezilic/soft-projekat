@@ -109,6 +109,7 @@
     <Content Include="lib\Microsoft.Dynamic.dll" />
     <Content Include="lib\Microsoft.Scripting.dll" />
     <Content Include="OCR\hand.txt" />
+    <Content Include="OCR\train.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
