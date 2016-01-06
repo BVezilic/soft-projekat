@@ -113,9 +113,9 @@ namespace PokerBot
                 if (c == 'S')
                     text += '\u2660';
                 else if (c == 'H')
-                    text += '\u2665';
+                    text += '\u2661';
                 else if (c == 'D')
-                    text += '\u2666';
+                    text += '\u2662';
                 else if (c == 'C')
                     text += '\u2663';
                 else
@@ -124,5 +124,10 @@ namespace PokerBot
             txtHand.Text = text;
         }
         #endregion
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            pbPicture.Image = null;
+        }
     }
 }

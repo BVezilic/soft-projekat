@@ -37,6 +37,7 @@
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnRecognize = new System.Windows.Forms.Button();
             this.txtHand = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -66,18 +67,19 @@
             // 
             // cbCameras
             // 
+            this.cbCameras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCameras.FormattingEnabled = true;
             this.cbCameras.Location = new System.Drawing.Point(12, 271);
             this.cbCameras.Name = "cbCameras";
-            this.cbCameras.Size = new System.Drawing.Size(132, 21);
+            this.cbCameras.Size = new System.Drawing.Size(132, 28);
             this.cbCameras.TabIndex = 2;
             // 
             // btnCapture
             // 
             this.btnCapture.Enabled = false;
-            this.btnCapture.Location = new System.Drawing.Point(312, 268);
+            this.btnCapture.Location = new System.Drawing.Point(312, 271);
             this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(75, 25);
+            this.btnCapture.Size = new System.Drawing.Size(75, 28);
             this.btnCapture.TabIndex = 4;
             this.btnCapture.Text = "Capture";
             this.btnCapture.UseVisualStyleBackColor = true;
@@ -85,9 +87,9 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(150, 268);
+            this.btnConnect.Location = new System.Drawing.Point(150, 271);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(75, 25);
+            this.btnConnect.Size = new System.Drawing.Size(75, 28);
             this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -96,9 +98,9 @@
             // btnDisconnect
             // 
             this.btnDisconnect.Enabled = false;
-            this.btnDisconnect.Location = new System.Drawing.Point(231, 268);
+            this.btnDisconnect.Location = new System.Drawing.Point(231, 271);
             this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(75, 25);
+            this.btnDisconnect.Size = new System.Drawing.Size(75, 28);
             this.btnDisconnect.TabIndex = 6;
             this.btnDisconnect.Text = "Disconnect";
             this.btnDisconnect.UseVisualStyleBackColor = true;
@@ -106,9 +108,9 @@
             // 
             // btnRecognize
             // 
-            this.btnRecognize.Location = new System.Drawing.Point(697, 269);
+            this.btnRecognize.Location = new System.Drawing.Point(618, 271);
             this.btnRecognize.Name = "btnRecognize";
-            this.btnRecognize.Size = new System.Drawing.Size(75, 23);
+            this.btnRecognize.Size = new System.Drawing.Size(75, 28);
             this.btnRecognize.TabIndex = 7;
             this.btnRecognize.Text = "Recognize";
             this.btnRecognize.UseVisualStyleBackColor = true;
@@ -116,16 +118,28 @@
             // 
             // txtHand
             // 
-            this.txtHand.Location = new System.Drawing.Point(592, 271);
+            this.txtHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHand.Location = new System.Drawing.Point(397, 272);
             this.txtHand.Name = "txtHand";
-            this.txtHand.Size = new System.Drawing.Size(99, 20);
+            this.txtHand.Size = new System.Drawing.Size(215, 26);
             this.txtHand.TabIndex = 8;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(699, 272);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(73, 27);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtHand);
             this.Controls.Add(this.btnRecognize);
             this.Controls.Add(this.btnDisconnect);
@@ -157,6 +171,7 @@
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnRecognize;
         private System.Windows.Forms.TextBox txtHand;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
