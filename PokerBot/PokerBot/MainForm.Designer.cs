@@ -36,6 +36,7 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnRecognize = new System.Windows.Forms.Button();
+            this.txtHand = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +106,6 @@
             // 
             // btnRecognize
             // 
-            this.btnRecognize.Enabled = false;
             this.btnRecognize.Location = new System.Drawing.Point(697, 269);
             this.btnRecognize.Name = "btnRecognize";
             this.btnRecognize.Size = new System.Drawing.Size(75, 23);
@@ -114,11 +114,19 @@
             this.btnRecognize.UseVisualStyleBackColor = true;
             this.btnRecognize.Click += new System.EventHandler(this.btnRecognize_Click);
             // 
+            // txtHand
+            // 
+            this.txtHand.Location = new System.Drawing.Point(592, 271);
+            this.txtHand.Name = "txtHand";
+            this.txtHand.Size = new System.Drawing.Size(99, 20);
+            this.txtHand.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.txtHand);
             this.Controls.Add(this.btnRecognize);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
@@ -135,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,6 +156,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnRecognize;
+        private System.Windows.Forms.TextBox txtHand;
     }
 }
 

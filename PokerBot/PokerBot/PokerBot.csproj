@@ -108,6 +108,7 @@
     <Content Include="lib\IronPython.dll" />
     <Content Include="lib\Microsoft.Dynamic.dll" />
     <Content Include="lib\Microsoft.Scripting.dll" />
+    <Content Include="OCR\hand.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

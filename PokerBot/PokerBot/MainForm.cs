@@ -12,6 +12,7 @@ using Microsoft.Scripting.Hosting;
 
 using AForge.Video;
 using AForge.Video.DirectShow;
+using System.Drawing.Imaging;
 
 namespace PokerBot
 {
@@ -68,6 +69,7 @@ namespace PokerBot
         private void btnCapture_Click(object sender, EventArgs e)
         {
             pbPicture.Image = (Image)pbCamera.Image.Clone();
+            pbPicture.Image.Save(@"..\..\OCR\hand.jpg", ImageFormat.Jpeg);
         }
 
         private void btnDisconnect_Click(object sender, EventArgs e)
@@ -97,9 +99,29 @@ namespace PokerBot
 
         private void btnRecognize_Click(object sender, EventArgs e)
         {
+            /*
             var ipy = Python.CreateRuntime();
             dynamic test = ipy.UseFile("Test.py");
             test.ocr();
+            */
+            String hand = System.IO.File.ReadAllText(@"..\..\OCR\hand.txt");
+            txtHand.Tag = hand;
+
+            String text = "";
+            foreach (char c in hand)
+            {
+                if (c == 'S')
+                    text += '\u2660';
+                else if (c == 'H')
+                    text += '\u2665';
+                else if (c == 'D')
+                    text += '\u2666';
+                else if (c == 'C')
+                    text += '\u2663';
+                else
+                    text += c;
+            }
+            txtHand.Text = text;
         }
         #endregion
     }
