@@ -36,10 +36,39 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnRecognize = new System.Windows.Forms.Button();
-            this.txtHand = new System.Windows.Forms.TextBox();
+            this.tbHand = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnDeal = new System.Windows.Forms.Button();
+            this.gbPlayer = new System.Windows.Forms.GroupBox();
+            this.gbOutput = new System.Windows.Forms.GroupBox();
+            this.gbBot = new System.Windows.Forms.GroupBox();
+            this.lblPlayerMoney = new System.Windows.Forms.Label();
+            this.lblPlayerHand = new System.Windows.Forms.Label();
+            this.lblBotMoney = new System.Windows.Forms.Label();
+            this.lblBotHand = new System.Windows.Forms.Label();
+            this.lblPlayerHandValue = new System.Windows.Forms.Label();
+            this.lblBotHandValue = new System.Windows.Forms.Label();
+            this.tbPlayerMoney = new System.Windows.Forms.TextBox();
+            this.tbBotMoney = new System.Windows.Forms.TextBox();
+            this.tbPlayerHand = new System.Windows.Forms.TextBox();
+            this.tbBotHand = new System.Windows.Forms.TextBox();
+            this.btnPlayerCall = new System.Windows.Forms.Button();
+            this.btnPlayerRaise = new System.Windows.Forms.Button();
+            this.btnPlayerFold = new System.Windows.Forms.Button();
+            this.btnBotCall = new System.Windows.Forms.Button();
+            this.btnBotRaise = new System.Windows.Forms.Button();
+            this.btnBotFold = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.rtbOutput = new System.Windows.Forms.RichTextBox();
+            this.gbMood = new System.Windows.Forms.GroupBox();
+            this.pbMood = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
+            this.gbPlayer.SuspendLayout();
+            this.gbOutput.SuspendLayout();
+            this.gbBot.SuspendLayout();
+            this.gbMood.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMood)).BeginInit();
             this.SuspendLayout();
             // 
             // pbCamera
@@ -108,7 +137,7 @@
             // 
             // btnRecognize
             // 
-            this.btnRecognize.Location = new System.Drawing.Point(618, 271);
+            this.btnRecognize.Location = new System.Drawing.Point(548, 272);
             this.btnRecognize.Name = "btnRecognize";
             this.btnRecognize.Size = new System.Drawing.Size(75, 28);
             this.btnRecognize.TabIndex = 7;
@@ -116,13 +145,13 @@
             this.btnRecognize.UseVisualStyleBackColor = true;
             this.btnRecognize.Click += new System.EventHandler(this.btnRecognize_Click);
             // 
-            // txtHand
+            // tbHand
             // 
-            this.txtHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHand.Location = new System.Drawing.Point(397, 272);
-            this.txtHand.Name = "txtHand";
-            this.txtHand.Size = new System.Drawing.Size(215, 26);
-            this.txtHand.TabIndex = 8;
+            this.tbHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHand.Location = new System.Drawing.Point(397, 272);
+            this.tbHand.Name = "tbHand";
+            this.tbHand.Size = new System.Drawing.Size(145, 26);
+            this.tbHand.TabIndex = 8;
             // 
             // btnReset
             // 
@@ -134,13 +163,246 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnDeal
+            // 
+            this.btnDeal.Location = new System.Drawing.Point(13, 316);
+            this.btnDeal.Name = "btnDeal";
+            this.btnDeal.Size = new System.Drawing.Size(75, 23);
+            this.btnDeal.TabIndex = 10;
+            this.btnDeal.Text = "Deal cards";
+            this.btnDeal.UseVisualStyleBackColor = true;
+            // 
+            // gbPlayer
+            // 
+            this.gbPlayer.Controls.Add(this.btnPlayerFold);
+            this.gbPlayer.Controls.Add(this.btnPlayerRaise);
+            this.gbPlayer.Controls.Add(this.btnPlayerCall);
+            this.gbPlayer.Controls.Add(this.tbPlayerHand);
+            this.gbPlayer.Controls.Add(this.tbPlayerMoney);
+            this.gbPlayer.Controls.Add(this.lblPlayerHandValue);
+            this.gbPlayer.Controls.Add(this.lblPlayerHand);
+            this.gbPlayer.Controls.Add(this.lblPlayerMoney);
+            this.gbPlayer.Location = new System.Drawing.Point(13, 345);
+            this.gbPlayer.Name = "gbPlayer";
+            this.gbPlayer.Size = new System.Drawing.Size(374, 75);
+            this.gbPlayer.TabIndex = 11;
+            this.gbPlayer.TabStop = false;
+            this.gbPlayer.Text = "Player";
+            // 
+            // gbOutput
+            // 
+            this.gbOutput.Controls.Add(this.rtbOutput);
+            this.gbOutput.Location = new System.Drawing.Point(13, 426);
+            this.gbOutput.Name = "gbOutput";
+            this.gbOutput.Size = new System.Drawing.Size(610, 126);
+            this.gbOutput.TabIndex = 12;
+            this.gbOutput.TabStop = false;
+            this.gbOutput.Text = "Output";
+            // 
+            // gbBot
+            // 
+            this.gbBot.Controls.Add(this.btnBotFold);
+            this.gbBot.Controls.Add(this.btnBotRaise);
+            this.gbBot.Controls.Add(this.btnBotCall);
+            this.gbBot.Controls.Add(this.tbBotHand);
+            this.gbBot.Controls.Add(this.tbBotMoney);
+            this.gbBot.Controls.Add(this.lblBotHandValue);
+            this.gbBot.Controls.Add(this.lblBotHand);
+            this.gbBot.Controls.Add(this.lblBotMoney);
+            this.gbBot.Location = new System.Drawing.Point(397, 345);
+            this.gbBot.Name = "gbBot";
+            this.gbBot.Size = new System.Drawing.Size(375, 75);
+            this.gbBot.TabIndex = 12;
+            this.gbBot.TabStop = false;
+            this.gbBot.Text = "Bot";
+            // 
+            // lblPlayerMoney
+            // 
+            this.lblPlayerMoney.AutoSize = true;
+            this.lblPlayerMoney.Location = new System.Drawing.Point(7, 20);
+            this.lblPlayerMoney.Name = "lblPlayerMoney";
+            this.lblPlayerMoney.Size = new System.Drawing.Size(42, 13);
+            this.lblPlayerMoney.TabIndex = 0;
+            this.lblPlayerMoney.Text = "Money:";
+            // 
+            // lblPlayerHand
+            // 
+            this.lblPlayerHand.AutoSize = true;
+            this.lblPlayerHand.Location = new System.Drawing.Point(7, 50);
+            this.lblPlayerHand.Name = "lblPlayerHand";
+            this.lblPlayerHand.Size = new System.Drawing.Size(36, 13);
+            this.lblPlayerHand.TabIndex = 1;
+            this.lblPlayerHand.Text = "Hand:";
+            // 
+            // lblBotMoney
+            // 
+            this.lblBotMoney.AutoSize = true;
+            this.lblBotMoney.Location = new System.Drawing.Point(18, 20);
+            this.lblBotMoney.Name = "lblBotMoney";
+            this.lblBotMoney.Size = new System.Drawing.Size(42, 13);
+            this.lblBotMoney.TabIndex = 2;
+            this.lblBotMoney.Text = "Money:";
+            // 
+            // lblBotHand
+            // 
+            this.lblBotHand.AutoSize = true;
+            this.lblBotHand.Location = new System.Drawing.Point(18, 50);
+            this.lblBotHand.Name = "lblBotHand";
+            this.lblBotHand.Size = new System.Drawing.Size(36, 13);
+            this.lblBotHand.TabIndex = 3;
+            this.lblBotHand.Text = "Hand:";
+            // 
+            // lblPlayerHandValue
+            // 
+            this.lblPlayerHandValue.AutoSize = true;
+            this.lblPlayerHandValue.Location = new System.Drawing.Point(200, 50);
+            this.lblPlayerHandValue.Name = "lblPlayerHandValue";
+            this.lblPlayerHandValue.Size = new System.Drawing.Size(47, 13);
+            this.lblPlayerHandValue.TabIndex = 4;
+            this.lblPlayerHandValue.Text = "One pair";
+            // 
+            // lblBotHandValue
+            // 
+            this.lblBotHandValue.AutoSize = true;
+            this.lblBotHandValue.Location = new System.Drawing.Point(207, 50);
+            this.lblBotHandValue.Name = "lblBotHandValue";
+            this.lblBotHandValue.Size = new System.Drawing.Size(43, 13);
+            this.lblBotHandValue.TabIndex = 5;
+            this.lblBotHandValue.Text = "Straight";
+            // 
+            // tbPlayerMoney
+            // 
+            this.tbPlayerMoney.Location = new System.Drawing.Point(56, 17);
+            this.tbPlayerMoney.Name = "tbPlayerMoney";
+            this.tbPlayerMoney.Size = new System.Drawing.Size(57, 20);
+            this.tbPlayerMoney.TabIndex = 5;
+            // 
+            // tbBotMoney
+            // 
+            this.tbBotMoney.Location = new System.Drawing.Point(66, 19);
+            this.tbBotMoney.Name = "tbBotMoney";
+            this.tbBotMoney.Size = new System.Drawing.Size(54, 20);
+            this.tbBotMoney.TabIndex = 6;
+            // 
+            // tbPlayerHand
+            // 
+            this.tbPlayerHand.Location = new System.Drawing.Point(56, 47);
+            this.tbPlayerHand.Name = "tbPlayerHand";
+            this.tbPlayerHand.Size = new System.Drawing.Size(138, 20);
+            this.tbPlayerHand.TabIndex = 7;
+            // 
+            // tbBotHand
+            // 
+            this.tbBotHand.Location = new System.Drawing.Point(66, 47);
+            this.tbBotHand.Name = "tbBotHand";
+            this.tbBotHand.Size = new System.Drawing.Size(135, 20);
+            this.tbBotHand.TabIndex = 8;
+            // 
+            // btnPlayerCall
+            // 
+            this.btnPlayerCall.Location = new System.Drawing.Point(119, 16);
+            this.btnPlayerCall.Name = "btnPlayerCall";
+            this.btnPlayerCall.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayerCall.TabIndex = 8;
+            this.btnPlayerCall.Text = "Call";
+            this.btnPlayerCall.UseVisualStyleBackColor = true;
+            // 
+            // btnPlayerRaise
+            // 
+            this.btnPlayerRaise.Location = new System.Drawing.Point(200, 16);
+            this.btnPlayerRaise.Name = "btnPlayerRaise";
+            this.btnPlayerRaise.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayerRaise.TabIndex = 9;
+            this.btnPlayerRaise.Text = "Raise 20$";
+            this.btnPlayerRaise.UseVisualStyleBackColor = true;
+            // 
+            // btnPlayerFold
+            // 
+            this.btnPlayerFold.Location = new System.Drawing.Point(281, 16);
+            this.btnPlayerFold.Name = "btnPlayerFold";
+            this.btnPlayerFold.Size = new System.Drawing.Size(75, 23);
+            this.btnPlayerFold.TabIndex = 10;
+            this.btnPlayerFold.Text = "Fold";
+            this.btnPlayerFold.UseVisualStyleBackColor = true;
+            // 
+            // btnBotCall
+            // 
+            this.btnBotCall.Location = new System.Drawing.Point(126, 17);
+            this.btnBotCall.Name = "btnBotCall";
+            this.btnBotCall.Size = new System.Drawing.Size(75, 23);
+            this.btnBotCall.TabIndex = 11;
+            this.btnBotCall.Text = "Call";
+            this.btnBotCall.UseVisualStyleBackColor = true;
+            // 
+            // btnBotRaise
+            // 
+            this.btnBotRaise.Location = new System.Drawing.Point(207, 17);
+            this.btnBotRaise.Name = "btnBotRaise";
+            this.btnBotRaise.Size = new System.Drawing.Size(75, 23);
+            this.btnBotRaise.TabIndex = 12;
+            this.btnBotRaise.Text = "Raise 20$";
+            this.btnBotRaise.UseVisualStyleBackColor = true;
+            // 
+            // btnBotFold
+            // 
+            this.btnBotFold.Location = new System.Drawing.Point(288, 17);
+            this.btnBotFold.Name = "btnBotFold";
+            this.btnBotFold.Size = new System.Drawing.Size(75, 23);
+            this.btnBotFold.TabIndex = 13;
+            this.btnBotFold.Text = "Fold";
+            this.btnBotFold.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(629, 272);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(64, 27);
+            this.btnConfirm.TabIndex = 13;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            // 
+            // rtbOutput
+            // 
+            this.rtbOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbOutput.Location = new System.Drawing.Point(3, 16);
+            this.rtbOutput.Name = "rtbOutput";
+            this.rtbOutput.Size = new System.Drawing.Size(604, 107);
+            this.rtbOutput.TabIndex = 0;
+            this.rtbOutput.Text = "";
+            // 
+            // gbMood
+            // 
+            this.gbMood.Controls.Add(this.pbMood);
+            this.gbMood.Location = new System.Drawing.Point(629, 426);
+            this.gbMood.Name = "gbMood";
+            this.gbMood.Size = new System.Drawing.Size(143, 126);
+            this.gbMood.TabIndex = 13;
+            this.gbMood.TabStop = false;
+            this.gbMood.Text = "Mood";
+            // 
+            // pbMood
+            // 
+            this.pbMood.BackColor = System.Drawing.Color.Black;
+            this.pbMood.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbMood.Location = new System.Drawing.Point(3, 16);
+            this.pbMood.Name = "pbMood";
+            this.pbMood.Size = new System.Drawing.Size(137, 107);
+            this.pbMood.TabIndex = 0;
+            this.pbMood.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.gbMood);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.gbBot);
+            this.Controls.Add(this.gbOutput);
+            this.Controls.Add(this.gbPlayer);
+            this.Controls.Add(this.btnDeal);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.txtHand);
+            this.Controls.Add(this.tbHand);
             this.Controls.Add(this.btnRecognize);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnConnect);
@@ -156,6 +418,13 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
+            this.gbPlayer.ResumeLayout(false);
+            this.gbPlayer.PerformLayout();
+            this.gbOutput.ResumeLayout(false);
+            this.gbBot.ResumeLayout(false);
+            this.gbBot.PerformLayout();
+            this.gbMood.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,8 +439,32 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnRecognize;
-        private System.Windows.Forms.TextBox txtHand;
+        private System.Windows.Forms.TextBox tbHand;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDeal;
+        private System.Windows.Forms.GroupBox gbPlayer;
+        private System.Windows.Forms.Label lblPlayerHandValue;
+        private System.Windows.Forms.Label lblPlayerHand;
+        private System.Windows.Forms.Label lblPlayerMoney;
+        private System.Windows.Forms.GroupBox gbOutput;
+        private System.Windows.Forms.GroupBox gbBot;
+        private System.Windows.Forms.Label lblBotHandValue;
+        private System.Windows.Forms.Label lblBotHand;
+        private System.Windows.Forms.Label lblBotMoney;
+        private System.Windows.Forms.Button btnPlayerFold;
+        private System.Windows.Forms.Button btnPlayerRaise;
+        private System.Windows.Forms.Button btnPlayerCall;
+        private System.Windows.Forms.TextBox tbPlayerHand;
+        private System.Windows.Forms.TextBox tbPlayerMoney;
+        private System.Windows.Forms.RichTextBox rtbOutput;
+        private System.Windows.Forms.Button btnBotFold;
+        private System.Windows.Forms.Button btnBotRaise;
+        private System.Windows.Forms.Button btnBotCall;
+        private System.Windows.Forms.TextBox tbBotHand;
+        private System.Windows.Forms.TextBox tbBotMoney;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.GroupBox gbMood;
+        private System.Windows.Forms.PictureBox pbMood;
     }
 }
 

@@ -96,16 +96,11 @@ namespace PokerBot
             btnDisconnect.Enabled = false;
             btnCapture.Enabled = false;
         }
-
+        
         private void btnRecognize_Click(object sender, EventArgs e)
-        {
-            /*
-            var ipy = Python.CreateRuntime();
-            dynamic test = ipy.UseFile("Test.py");
-            test.ocr();
-            */
+        {            
             String hand = System.IO.File.ReadAllText(@"..\..\OCR\hand.txt");
-            txtHand.Tag = hand;
+            tbHand.Tag = hand;
 
             String text = "";
             foreach (char c in hand)
@@ -121,13 +116,14 @@ namespace PokerBot
                 else
                     text += c;
             }
-            txtHand.Text = text;
+            tbHand.Text = text;
         }
-        #endregion
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             pbPicture.Image = null;
+            tbHand.Text = null;
         }
+        #endregion
     }
 }
