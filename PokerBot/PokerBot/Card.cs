@@ -1,46 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace PokerBot
+namespace Poker_AI
 {
-    public enum SUIT
-    {
-        HEARTS,
-        SPADES,
-        DIAMONDS,
-        CLUBS
-    }
-
-    public enum VALUE
-    {
-        TWO = 2, THREE, FOUR, FIVE, SIX, SEVEN,
-        EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE
-    }
-
     class Card
     {
-        private SUIT suit;
-        private VALUE value;
+        
+        private int value;
 
-        public SUIT Suit
+        public int Value
         {
-            get { return suit; }
-            set { suit = value; }
+            get
+            {
+                return value;
+            }
+            set
+            {
+                this.value = value; 
+            }
         }
 
-        public VALUE Value
-        {
-            get { return value; }
-            set { this.value = value; }
+        private String suite;
+
+        public String Suite{
+            get
+            {
+                return suite;
+            }
+            set
+            {
+                this.suite = value;
+            }
         }
 
-        public Card(SUIT suit, VALUE value)
+        public Card(int value, String suite)
         {
-            this.suit = suit;
             this.value = value;
+            this.suite = suite;
         }
+
+        public override String ToString()
+        {
+            return value.ToString() + suite;
+        }
+
+        
+
     }
 }

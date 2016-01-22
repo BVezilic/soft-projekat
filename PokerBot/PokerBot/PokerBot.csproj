@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Deck.cs" />
+    <Compile Include="Hand.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
