@@ -13,7 +13,7 @@ using Microsoft.Scripting.Hosting;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
-using Poker_AI;
+
 
 namespace PokerBot
 {
@@ -21,7 +21,7 @@ namespace PokerBot
     {
         private FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
-        Hand hnd = new Hand();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -129,15 +129,7 @@ namespace PokerBot
 
         private void checkHandBtn_Click(object sender, EventArgs e)
         {
-            String[] vals = tbBotHandNum.Text.Split(' ');
-            String[] suit = tbBotHandSuite.Text.Split(' ');
-            hnd.removeAll();
             
-            for(int i = 0; i < 5; i++)
-            {
-                hnd.addCard(new Card(Int32.Parse(vals.ElementAt(i)), suit.ElementAt(i)));
-            }
-            lblBotHandValue.Text = hnd.checkHand();
         }
     }
 }
