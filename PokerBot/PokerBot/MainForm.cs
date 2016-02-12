@@ -131,5 +131,11 @@ namespace PokerBot
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hand hand = new Hand(tbNewHand.Text);
+            lHand.Text = hand.ToString();
+        }
     }
 }

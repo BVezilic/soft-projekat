@@ -7,16 +7,7 @@ using System;
 
 public enum Value
 {
-   2,
-   3,
-   4,
-   5,
-   6,
-   7,
-   8,
-   9,
-   10,
-   j,
+   j=11,
    q,
    k,
    a

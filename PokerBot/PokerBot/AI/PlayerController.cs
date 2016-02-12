@@ -4,7 +4,7 @@
 // Purpose: Definition of Class PlayerController
 
 using System;
-
+using System.Collections.Generic;
 public class PlayerController
 {
    private Hand playerHand;

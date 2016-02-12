@@ -4,90 +4,117 @@
 // Purpose: Definition of Class Hand
 
 using System;
-using Sistem.Collections.Generic;
+using System.Collections.Generic;
 
 public class Hand
 {
-   private List<Card> cards;
-   
-   /// <summary>
-   /// Property for collection of Card
-   /// </summary>
-   /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public List<Card> Cards
-   {
-      get
-      {
-         if (cards == null)
-            cards = new List<Card>();
-         return cards;
-      }
-      set
-      {
-         RemoveAllCards();
-         if (value != null)
-         {
-            foreach (Card oCard in value)
-               AddCards(oCard);
-         }
-      }
-   }
-   
-   /// <summary>
-   /// Add a new Card in the collection
-   /// </summary>
-   /// <pdGenerated>Default Add</pdGenerated>
-   public void AddCards(Card newCard)
-   {
-      if (newCard == null)
-         return;
-      if (this.cards == null)
-         this.cards = new List<Card>();
-      if (!this.cards.Contains(newCard))
-         this.cards.Add(newCard);
-   }
-   
-   /// <summary>
-   /// Remove an existing Card from the collection
-   /// </summary>
-   /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveCards(Card oldCard)
-   {
-      if (oldCard == null)
-         return;
-      if (this.cards != null)
-         if (this.cards.Contains(oldCard))
-            this.cards.Remove(oldCard);
-   }
-   
-   /// <summary>
-   /// Remove all instances of Card from the collection
-   /// </summary>
-   /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllCards()
-   {
-      if (cards != null)
-         cards.Clear();
-   }
-   
-   public bool AddCard()
-   {
-      throw new NotImplementedException();
-   }
-   
-   public bool RemoveCard()
-   {
-      throw new NotImplementedException();
-   }
-   
-   public int EvaluateHand()
-   {
-      throw new NotImplementedException();
-   }
-   
-   public Hand(Card cards)
-   {
-      throw new NotImplementedException();
-   }
+    #region Attributes
+    private List<Card> cards;
 
+    public List<Card> Cards
+    {
+        get
+        {
+            if (cards == null)
+                cards = new List<Card>();
+            return cards;
+        }
+        set
+        {
+            RemoveAllCards();
+            if (value != null)
+            {
+                foreach (Card oCard in value)
+                    AddCards(oCard);
+            }
+        }
+    }
+    #endregion
+    
+    #region Constructors
+    public Hand()
+    {
+        this.Cards = new List<Card>();
+    }
+
+    public Hand(List<Card> cards)
+    {
+        this.Cards = cards;
+    }
+
+
+    public Hand(Hand newHand)
+    {
+        this.Cards = newHand.Cards;
+    }
+
+    public Hand(String cards)
+    {
+        Cards = CardFactory.GetCards(cards);
+    }
+    #endregion
+
+    #region Methods
+    public void AddCards(Card newCard)
+    {
+        if (newCard == null)
+            return;
+        if (this.cards == null)
+            this.cards = new List<Card>();
+        if (!this.cards.Contains(newCard))
+            this.cards.Add(newCard);
+    }
+
+    public void RemoveCard(Card oldCard)
+    {
+        if (oldCard == null)
+            return;
+        if (this.cards != null)
+            if (this.cards.Contains(oldCard))
+                this.cards.Remove(oldCard);
+    }
+
+    public void RemoveCard(int index)
+    {
+
+        if (this.cards != null) { 
+            this.cards.RemoveAt(index);
+        }
+    }
+
+    public bool RemoveAllCards()
+    {
+        if (cards != null) { 
+            cards.Clear();
+            return true;
+        }
+        return false;
+    }
+
+    public bool AddCard(Card card)
+    {
+        int i = cards.Count;
+        cards.Add(card);
+        if (i == cards.Count)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    public int EvaluateHand()   
+    {
+        return HandEvaluator.EvaluateHand(this);
+    }
+    #endregion
+
+    public override string ToString()
+    {
+        string retVal = "";
+        foreach(Card card in Cards)
+        {
+            retVal += card.ToString() + " ";
+        }
+        return retVal;
+    }
 }

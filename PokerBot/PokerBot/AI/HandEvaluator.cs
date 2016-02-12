@@ -7,7 +7,7 @@ using System;
 
 public class HandEvaluator
 {
-   public static int EvaluateHand()
+   public static int EvaluateHand(Hand hand)
    {
       throw new NotImplementedException();
    }

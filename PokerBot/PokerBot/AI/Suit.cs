@@ -7,8 +7,9 @@ using System;
 
 public enum Suit
 {
-   hearts,
-   clubs,
-   spades,
-   diamonds
+    hearts,
+    spades,
+    diamonds,
+    clubs   
 }
+
