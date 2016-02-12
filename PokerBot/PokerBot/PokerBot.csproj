@@ -84,9 +84,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\Card.cs" />
+    <Compile Include="AI\CardFactory.cs" />
+    <Compile Include="AI\Game.cs" />
     <Compile Include="AI\Hand.cs" />
     <Compile Include="AI\HandEvaluator.cs" />
+    <Compile Include="AI\Mood.cs" />
+    <Compile Include="AI\Player.cs" />
+    <Compile Include="AI\PlayerController.cs" />
+    <Compile Include="AI\Suit.cs" />
     <Compile Include="AI\TradeChecker.cs" />
+    <Compile Include="AI\Value.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

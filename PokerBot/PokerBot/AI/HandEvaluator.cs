@@ -1,18 +1,15 @@
-/***********************************************************************
- * Module:  HandEvaluator.cs
- * Author:  STOLE
- * Purpose: Definition of the Class HandEvaluator
- ***********************************************************************/
+// File:    HandEvaluator.cs
+// Author:  STOLE
+// Created: Monday, February 08, 2016 5:27:59 PM
+// Purpose: Definition of Class HandEvaluator
 
 using System;
-using System.Collections.Generic;
 
 public class HandEvaluator
 {
-   public static int EvaluateHand(List<Card> hand)
+   public static int EvaluateHand()
    {
-      
-      return 0;
+      throw new NotImplementedException();
    }
 
 }

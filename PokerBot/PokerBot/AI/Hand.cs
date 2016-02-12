@@ -1,67 +1,93 @@
-/***********************************************************************
- * Module:  Hand.cs
- * Author:  STOLE
- * Purpose: Definition of the Class Hand
- ***********************************************************************/
+// File:    Hand.cs
+// Author:  STOLE
+// Created: Monday, February 08, 2016 5:21:36 PM
+// Purpose: Definition of Class Hand
 
 using System;
-using System.Windows.Forms;
-using System.Collections.Generic;
+using Sistem.Collections.Generic;
+
 public class Hand
 {
-    private List<Card> cards;
-
-    public List<Card> Cards
-    {
-        get
-        {
-            return cards;
-        }
-
-        set
-        {
-            cards = value;
-        }
-    }
-
-    Hand(List<Card> cards)
-    {
-        this.Cards = cards;
-        
-    }
-
-    Hand()
-    {
-        Cards = new List<Card>();
-    }
-
-    public bool AddCard()
+   private List<Card> cards;
+   
+   /// <summary>
+   /// Property for collection of Card
+   /// </summary>
+   /// <pdGenerated>Default opposite class collection property</pdGenerated>
+   public List<Card> Cards
    {
-      // TODO: implement
-      return false;
+      get
+      {
+         if (cards == null)
+            cards = new List<Card>();
+         return cards;
+      }
+      set
+      {
+         RemoveAllCards();
+         if (value != null)
+         {
+            foreach (Card oCard in value)
+               AddCards(oCard);
+         }
+      }
+   }
+   
+   /// <summary>
+   /// Add a new Card in the collection
+   /// </summary>
+   /// <pdGenerated>Default Add</pdGenerated>
+   public void AddCards(Card newCard)
+   {
+      if (newCard == null)
+         return;
+      if (this.cards == null)
+         this.cards = new List<Card>();
+      if (!this.cards.Contains(newCard))
+         this.cards.Add(newCard);
+   }
+   
+   /// <summary>
+   /// Remove an existing Card from the collection
+   /// </summary>
+   /// <pdGenerated>Default Remove</pdGenerated>
+   public void RemoveCards(Card oldCard)
+   {
+      if (oldCard == null)
+         return;
+      if (this.cards != null)
+         if (this.cards.Contains(oldCard))
+            this.cards.Remove(oldCard);
+   }
+   
+   /// <summary>
+   /// Remove all instances of Card from the collection
+   /// </summary>
+   /// <pdGenerated>Default removeAll</pdGenerated>
+   public void RemoveAllCards()
+   {
+      if (cards != null)
+         cards.Clear();
+   }
+   
+   public bool AddCard()
+   {
+      throw new NotImplementedException();
    }
    
    public bool RemoveCard()
    {
-      // TODO: implement
-      return false;
+      throw new NotImplementedException();
    }
    
-   public void EvaluateHand()
+   public int EvaluateHand()
    {
-        HandEvaluator.EvaluateHand(cards);
-   }
-   
-   public void TradeCards()
-   {
-        TradeChecker.TradeCards(cards);
+      throw new NotImplementedException();
    }
    
    public Hand(Card cards)
    {
-      // TODO: implement
+      throw new NotImplementedException();
    }
-
-   
 
 }
