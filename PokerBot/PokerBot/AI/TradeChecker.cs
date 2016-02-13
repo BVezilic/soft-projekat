@@ -191,7 +191,7 @@ public class TradeChecker
         int highHand = playerControler.PlayerHand.EvaluateHand() % 100;
         foreach (Card card in playerControler.PlayerHand.Cards)
         {
-            if (playerControler.Player.Mood == Mood.bad)
+            if (playerControler.Player.Mood == Mood.bad && (int)(card.Value) != highHand)
             {
                 if ((int)(card.Value) != firstCard)
                 {
@@ -210,7 +210,7 @@ public class TradeChecker
             }
             if (playerControler.Player.Mood == Mood.good)
             {
-                if ((int)(card.Value) != firstCard && (int)(card.Value) != highHand)
+                if ((int)(card.Value) != firstCard)
                 {
                     retVal.Add(card);
                 }
