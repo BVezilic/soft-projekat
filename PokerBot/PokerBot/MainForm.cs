@@ -143,11 +143,35 @@ namespace PokerBot
             string handName = "";
             switch (forSwithc)
             {
+                case 9:
+                    handName = "Royal Flush";
+                    break;
+                case 8:
+                    handName = "Straight Flush";
+                    break;
                 case 7:
                     handName = "Four Of A Kind";
                     break;
                 case 6:
                     handName = "Full House";
+                    break;
+                case 5:
+                    handName = "Flush";
+                    break;
+                case 4:
+                    handName = "Straight";
+                    break;
+                case 3:
+                    handName = "Three Of A Kind";
+                    break;
+                case 2:
+                    handName = "Two Pairs";
+                    break;
+                case 1:
+                    handName = "One Pair";
+                    break;
+                case 0:
+                    handName = "High Card";
                     break;
             }
 
