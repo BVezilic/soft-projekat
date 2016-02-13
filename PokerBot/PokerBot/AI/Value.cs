@@ -8,7 +8,7 @@ using System;
 public enum Value
 {
    j=11,
-   q,
-   k,
-   a
+   q=12,
+   k=13,
+   a=14
 }

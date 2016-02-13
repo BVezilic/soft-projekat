@@ -41,7 +41,7 @@ public class Card
     #region Constructors
     public Card()
     {
-        suit = Suit.spades;
+        suit = Suit.s;
         value = Value.a;
     }
    

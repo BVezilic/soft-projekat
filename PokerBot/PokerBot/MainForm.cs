@@ -135,6 +135,24 @@ namespace PokerBot
         private void button1_Click(object sender, EventArgs e)
         {
             Hand hand = new Hand(tbNewHand.Text);
+
+            int forSwithc = hand.EvaluateHand();
+            lHandVal.Text = forSwithc.ToString();
+
+            forSwithc = forSwithc / 1000000;
+            string handName = "";
+            switch (forSwithc)
+            {
+                case 7:
+                    handName = "Four Of A Kind";
+                    break;
+                case 6:
+                    handName = "Full House";
+                    break;
+            }
+
+            lHandName.Text = handName;
+
             lHand.Text = hand.ToString();
         }
     }

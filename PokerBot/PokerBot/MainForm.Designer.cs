@@ -47,6 +47,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lHand = new System.Windows.Forms.Label();
             this.tbNewHand = new System.Windows.Forms.TextBox();
+            this.lHandVal = new System.Windows.Forms.Label();
+            this.lHandName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.gbOutput.SuspendLayout();
@@ -229,11 +231,31 @@
             this.tbNewHand.Size = new System.Drawing.Size(100, 20);
             this.tbNewHand.TabIndex = 16;
             // 
+            // lHandVal
+            // 
+            this.lHandVal.AutoSize = true;
+            this.lHandVal.Location = new System.Drawing.Point(262, 426);
+            this.lHandVal.Name = "lHandVal";
+            this.lHandVal.Size = new System.Drawing.Size(35, 13);
+            this.lHandVal.TabIndex = 17;
+            this.lHandVal.Text = "label1";
+            // 
+            // lHandName
+            // 
+            this.lHandName.AutoSize = true;
+            this.lHandName.Location = new System.Drawing.Point(262, 454);
+            this.lHandName.Name = "lHandName";
+            this.lHandName.Size = new System.Drawing.Size(35, 13);
+            this.lHandName.TabIndex = 18;
+            this.lHandName.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lHandName);
+            this.Controls.Add(this.lHandVal);
             this.Controls.Add(this.tbNewHand);
             this.Controls.Add(this.lHand);
             this.Controls.Add(this.button1);
@@ -286,6 +308,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lHand;
         private System.Windows.Forms.TextBox tbNewHand;
+        private System.Windows.Forms.Label lHandVal;
+        private System.Windows.Forms.Label lHandName;
     }
 }
 
