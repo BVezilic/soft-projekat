@@ -59,6 +59,7 @@ public class Card
 
     #endregion
 
+    #region Redefined Methods
     public override string ToString()
     {   
         
@@ -105,4 +106,5 @@ public class Card
         return retVal;
            
     }
+    #endregion
 }

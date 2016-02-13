@@ -96,6 +96,37 @@ public class TradeChecker
 
     private static List<Card> changeStraight(PlayerController playerControler)
     {
+        List<Card> retVal = new List<Card>();
+        Dictionary<int,int> suits = new Dictionary<int, int>();
+
+        if(playerControler.Player.Mood == Mood.good)
+        {
+            foreach(Card card in playerControler.PlayerHand.Cards)
+            {
+                if (suits.ContainsKey((int)(card.Suit)))
+                {
+                    suits[(int)(card.Suit)]++;
+                }
+                else
+                {
+                    suits.Add((int)(card.Suit), 1);
+                }
+            }
+
+            if (suits.ContainsValue(4))
+            {
+                foreach (Card card in playerControler.PlayerHand.Cards)
+                {
+                    if (suits[(int)(card.Suit)] != 4)
+                    {
+                        retVal.Add(card);
+                        break;
+                    }             
+                }
+            }
+        }
+        
+
         return new List<Card>();
     }
 
@@ -143,7 +174,7 @@ public class TradeChecker
             }
             if (playerControler.Player.Mood == Mood.good)
             {
-                if (((int)(card.Value) == highHand) || (((int)(card.Value) ==sedonCard) && sedonCard<7))
+                if (((int)(card.Value) == highHand) || (((int)(card.Value) == sedonCard) && sedonCard<7))
                 {
                     retVal.Add(card);
                 }

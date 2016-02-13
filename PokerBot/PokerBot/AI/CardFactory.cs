@@ -8,8 +8,9 @@ using System.Collections.Generic;
 
 public class CardFactory
 {
-   public static List<Card> GetCards(String cards)
-   {
+    #region Methods
+    public static List<Card> GetCards(String cards)
+    {
         string[] cardCollection = cards.Split(' ');
         List<Card> retVal = new List<Card>();
         Suit tempSuit;
@@ -25,6 +26,7 @@ public class CardFactory
             
         }
         return retVal;
-   }
+    }
+    #endregion
 
 }

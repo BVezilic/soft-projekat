@@ -108,6 +108,7 @@ public class Hand
     }
     #endregion
 
+    #region Redefined Methods
     public override string ToString()
     {
         string retVal = "";
@@ -117,4 +118,5 @@ public class Hand
         }
         return retVal;
     }
+    #endregion
 }
