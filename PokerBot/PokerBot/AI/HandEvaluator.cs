@@ -8,6 +8,7 @@ using System.Collections.Generic;
 
 public class HandEvaluator
 {
+    #region Methods
     public static int EvaluateHand(Hand hand)
     {
         HandEvaluator eval = new HandEvaluator();
@@ -395,6 +396,7 @@ public class HandEvaluator
         retVal += hcVal;
         return retVal;
     }
+    #endregion
 }
 
 //c,3 h,k h,2 s,3 d,2

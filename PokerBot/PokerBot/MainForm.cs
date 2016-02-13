@@ -178,6 +178,26 @@ namespace PokerBot
             lHandName.Text = handName;
 
             lHand.Text = hand.ToString();
+
+            List<Card> change = new List<Card>();
+            Player player = new Player(200, (Mood)Enum.Parse(typeof(Mood), comboBox1.Text, true));
+            PlayerController pc = new PlayerController(hand, player);
+
+            change = pc.TradeCards();
+
+            handName = "";
+            foreach (Card card in change)
+            {
+                handName += card.ToString() + " ";
+            }
+
+            lChangeCards.Text = handName;
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

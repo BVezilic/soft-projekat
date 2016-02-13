@@ -49,6 +49,8 @@
             this.tbNewHand = new System.Windows.Forms.TextBox();
             this.lHandVal = new System.Windows.Forms.Label();
             this.lHandName = new System.Windows.Forms.Label();
+            this.lChangeCards = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.gbOutput.SuspendLayout();
@@ -207,7 +209,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(75, 390);
+            this.button1.Location = new System.Drawing.Point(16, 345);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
@@ -218,7 +220,7 @@
             // lHand
             // 
             this.lHand.AutoSize = true;
-            this.lHand.Location = new System.Drawing.Point(262, 395);
+            this.lHand.Location = new System.Drawing.Point(203, 350);
             this.lHand.Name = "lHand";
             this.lHand.Size = new System.Drawing.Size(35, 13);
             this.lHand.TabIndex = 15;
@@ -226,7 +228,7 @@
             // 
             // tbNewHand
             // 
-            this.tbNewHand.Location = new System.Drawing.Point(156, 392);
+            this.tbNewHand.Location = new System.Drawing.Point(97, 347);
             this.tbNewHand.Name = "tbNewHand";
             this.tbNewHand.Size = new System.Drawing.Size(100, 20);
             this.tbNewHand.TabIndex = 16;
@@ -234,7 +236,7 @@
             // lHandVal
             // 
             this.lHandVal.AutoSize = true;
-            this.lHandVal.Location = new System.Drawing.Point(262, 426);
+            this.lHandVal.Location = new System.Drawing.Point(203, 381);
             this.lHandVal.Name = "lHandVal";
             this.lHandVal.Size = new System.Drawing.Size(35, 13);
             this.lHandVal.TabIndex = 17;
@@ -243,17 +245,41 @@
             // lHandName
             // 
             this.lHandName.AutoSize = true;
-            this.lHandName.Location = new System.Drawing.Point(262, 454);
+            this.lHandName.Location = new System.Drawing.Point(203, 409);
             this.lHandName.Name = "lHandName";
             this.lHandName.Size = new System.Drawing.Size(35, 13);
             this.lHandName.TabIndex = 18;
             this.lHandName.Text = "label1";
+            // 
+            // lChangeCards
+            // 
+            this.lChangeCards.AutoSize = true;
+            this.lChangeCards.Location = new System.Drawing.Point(203, 433);
+            this.lChangeCards.Name = "lChangeCards";
+            this.lChangeCards.Size = new System.Drawing.Size(35, 13);
+            this.lChangeCards.TabIndex = 19;
+            this.lChangeCards.Text = "label1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "bad",
+            "neutral",
+            "good"});
+            this.comboBox1.Location = new System.Drawing.Point(16, 374);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lChangeCards);
             this.Controls.Add(this.lHandName);
             this.Controls.Add(this.lHandVal);
             this.Controls.Add(this.tbNewHand);
@@ -310,6 +336,8 @@
         private System.Windows.Forms.TextBox tbNewHand;
         private System.Windows.Forms.Label lHandVal;
         private System.Windows.Forms.Label lHandName;
+        private System.Windows.Forms.Label lChangeCards;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

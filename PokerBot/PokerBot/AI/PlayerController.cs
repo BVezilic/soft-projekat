@@ -7,17 +7,63 @@ using System;
 using System.Collections.Generic;
 public class PlayerController
 {
-   private Hand playerHand;
-   private Player player;
-   
-   public List<Card> TradeCards(PlayerController playerController)
-   {
-      throw new NotImplementedException();
-   }
-   
-   public int EvaluateHand()
-   {
-      throw new NotImplementedException();
-   }
+    #region Attributes
+    private Hand playerHand;
+    private Player player;
+    public Hand PlayerHand
+    {
+        get
+        {
+            return playerHand;
+        }
 
+        set
+        {
+            playerHand = value;
+        }
+    }
+
+    public Player Player
+    {
+        get
+        {
+            return player;
+        }
+
+        set
+        {
+            player = value;
+        }
+    }
+    #endregion
+
+    #region Constructor
+    public PlayerController()
+    {
+        PlayerHand = new Hand();
+        Player = new Player();
+    }
+    public PlayerController(Hand playerHand, Player player)
+    {
+        this.playerHand = playerHand;
+        this.player = player;
+    }
+    #endregion
+
+    #region Methods
+    public List<Card> TradeCards()
+    {
+        return TradeChecker.TradeCards(this);
+    }
+   
+    public int EvaluateHand()
+    {
+        return PlayerHand.EvaluateHand();
+    }
+
+    public int makeBet()
+    {
+        return 0;
+    }
+    #endregion
 }
