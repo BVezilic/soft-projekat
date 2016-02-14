@@ -10,6 +10,10 @@ public class PlayerController
     #region Attributes
     private Hand playerHand;
     private Player player;
+    private double opBluff = 0;
+    private double opFactor = 0;
+    private int aiCurBet = 0;
+    private int maxBet = 0;
     public Hand PlayerHand
     {
         get
@@ -35,6 +39,47 @@ public class PlayerController
             player = value;
         }
     }
+
+    public double OpBluff
+    {
+        get
+        {
+            return opBluff;
+        }
+
+        set
+        {
+            opBluff = value;
+        }
+    }
+
+    public double OpFactor
+    {
+        get
+        {
+            return opFactor;
+        }
+
+        set
+        {
+            opFactor = value;
+        }
+    }
+
+    public int AiCurBet
+    {
+        get
+        {
+            return aiCurBet;
+        }
+
+        set
+        {
+            aiCurBet = value;
+        }
+    }
+
+
     #endregion
 
     #region Constructor
@@ -61,9 +106,111 @@ public class PlayerController
         return PlayerHand.EvaluateHand();
     }
 
-    public int makeBet()
+    public int EvaluateMaxBet()
     {
-        return 0;
+        int retVal = 0;
+
+        double calculation = (double)EvaluateHand() / 9000000;
+
+        if(calculation == 1)
+        {
+            return Player.Money;
+        }
+
+        calculation *= Player.Money;
+
+        Random rnd = new Random();
+        
+
+        switch (Player.Mood)
+        {
+            case Mood.good:
+                calculation *= (double)(100 + rnd.Next(5, 15)) / 100;
+                break; 
+            case Mood.neutral:
+                calculation *= (double)(100 + rnd.Next(-5, 5)) / 100;
+                break;
+            case Mood.bad:
+                calculation *= (double)(100 - rnd.Next(5, 15)) / 100;
+                break;
+        }
+
+        retVal = (int)calculation;
+        if (retVal == 0)
+        {
+            retVal++;
+        }
+        maxBet = retVal;
+        return retVal;
+    }
+
+    public void newRound()
+    {
+        opBluff = 0;
+        opFactor = 0;
+        aiCurBet = 0;
+    }
+
+    public int makeBet(int opCurentBet, int opMoney, int opBet, bool isFirstPhase)
+    {
+        Random rnd = new Random();
+
+        int retVal = 0;
+
+        
+
+        #region Modifiers
+        double moneyModifier = ((Player.Money - opMoney) / (Player.Money + opMoney)) * 10;
+        double aiMoodModifier = 0;
+        double handModifier = (double)(EvaluateHand() / 1000000) * 5;
+        double halfValueModifier = (1-(double)aiCurBet/((double)maxBet/2))*100;
+        double maxValueModifier = (1 - (double)aiCurBet / (maxBet)) * 100;
+        double alMoodFactor = 0;
+        switch (Player.Mood)
+        {
+            case Mood.good:
+                alMoodFactor = (double)rnd.Next(12, 20) / 100;
+                aiMoodModifier = (double)rnd.Next(10,20);
+                break;
+            case Mood.neutral:
+                alMoodFactor = (double)rnd.Next(6, 12) / 100;
+                aiMoodModifier = (double)rnd.Next(-10, 10);
+                break;
+            case Mood.bad:
+                alMoodFactor = (double)rnd.Next(1, 6) / 100;
+                aiMoodModifier = (double)rnd.Next(-20, -10);
+                break;
+
+        }
+        int aiBet = (int)(maxBet * alMoodFactor);
+
+        double betModifier = moneyModifier + aiMoodModifier + handModifier + (isFirstPhase?halfValueModifier:maxValueModifier);
+
+
+
+        #endregion
+
+        
+        
+        if (betModifier > 50)
+        {
+            retVal = aiBet+opBet;
+           
+            
+        }
+        if (betModifier <50 && betModifier > 0)
+        {
+            retVal = opBet; //call
+        }
+
+        if(betModifier < 0)
+        {
+            retVal = 0; //fold
+        }
+        aiCurBet += retVal;
+        player.Money -= retVal;
+
+        return retVal;
     }
     #endregion
-}
+}//c,3 h,k h,2 s,3 d,2

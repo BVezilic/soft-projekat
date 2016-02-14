@@ -19,6 +19,12 @@ namespace PokerBot
 {
     public partial class MainForm : Form
     {
+        private int pot = 0;
+        private int aiBet = 0;
+        private bool isFirstPhase = true;
+        private Player player = new Player(20000, Mood.neutral);
+        private PlayerController pc = new PlayerController();
+        private Player oponent = new Player(20000, Mood.neutral);
         private FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
         
@@ -135,7 +141,11 @@ namespace PokerBot
         private void button1_Click(object sender, EventArgs e)
         {
             Hand hand = new Hand(tbNewHand.Text);
+            Random rnd = new Random();
 
+            player.Mood = (Mood)(int)(rnd.Next(0,3));
+
+            pc = new PlayerController(hand, player);
             int forSwithc = hand.EvaluateHand();
             lHandVal.Text = forSwithc.ToString();
 
@@ -180,8 +190,7 @@ namespace PokerBot
             lHand.Text = hand.ToString();
 
             List<Card> change = new List<Card>();
-            Player player = new Player(200, (Mood)Enum.Parse(typeof(Mood), comboBox1.Text, true));
-            PlayerController pc = new PlayerController(hand, player);
+            
 
             change = pc.TradeCards();
 
@@ -192,12 +201,112 @@ namespace PokerBot
             }
 
             lChangeCards.Text = handName;
-
+            lAiMoney.Text = pc.Player.Money.ToString();
+            lAiMaxBet.Text = pc.EvaluateMaxBet().ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btRes_Click(object sender, EventArgs e)
+        {
+            lAiMoney.Text = player.Money.ToString();
+            lOpMoney.Text = oponent.Money.ToString();
+            isFirstPhase = true;
+            lPhase.Text = isFirstPhase.ToString();
+            
+        }
+
+        private void btnRaise_Click(object sender, EventArgs e)
+        {
+            int opBet = this.aiBet + int.Parse(tbRaise.Text);
+
+            oponent.Money -= opBet;
+            pot += opBet;
+            int aiBet = pc.makeBet(0, oponent.Money, opBet, isFirstPhase);
+
+            if (aiBet == opBet)
+            {
+                lAiMove.Text = "Call";
+                isFirstPhase = false;
+                lPhase.Text = isFirstPhase.ToString();
+                pot = aiBet;
+                lPot.Text = pot.ToString();
+                return;
+            }
+            if (aiBet == 0)
+            {
+                oponent.Money += pot;
+                pot = 0;
+                lAiMove.Text = "Fold";
+                isFirstPhase = true;
+                lPhase.Text = isFirstPhase.ToString();
+                lAiMoney.Text = player.Money.ToString();
+                lOpMoney.Text = oponent.Money.ToString();
+                
+                lPot.Text = pot.ToString();
+                return;
+            }
+            pot += aiBet;
+            lPot.Text = pot.ToString();
+            lAiMove.Text = "Raise " + aiBet.ToString();
+        }
+
+        private void btnCall_Click(object sender, EventArgs e)
+        {
+            oponent.Money -= aiBet;
+            pot += aiBet;
+            isFirstPhase = false;
+            lPhase.Text = isFirstPhase.ToString();
+            lPot.Text = pot.ToString();
+        }
+
+        private void btnFold_Click(object sender, EventArgs e)
+        {
+            
+            player.Money += pot;
+            pot = 0;
+            lPot.Text = pot.ToString();
+            isFirstPhase = true;
+            lPhase.Text = isFirstPhase.ToString();
+            lAiMoney.Text = player.Money.ToString();
+            lOpMoney.Text = oponent.Money.ToString();
+        }
+
+        private void lOpMoney_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWin_Click(object sender, EventArgs e)
+        {
+            oponent.Money += pot;
+            pot = 0;
+            isFirstPhase = true;
+            lPhase.Text = isFirstPhase.ToString();
+            lAiMoney.Text = player.Money.ToString();
+            lOpMoney.Text = oponent.Money.ToString();
+
+            lPot.Text = pot.ToString();
+        }
     }
 }
+//h,10 c,a c,4 d,3 s,5
+//c,a s,4 d,9 d,4 s,3

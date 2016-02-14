@@ -51,6 +51,19 @@
             this.lHandName = new System.Windows.Forms.Label();
             this.lChangeCards = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lAiMoney = new System.Windows.Forms.Label();
+            this.lAiMaxBet = new System.Windows.Forms.Label();
+            this.btnRaise = new System.Windows.Forms.Button();
+            this.tbRaise = new System.Windows.Forms.TextBox();
+            this.lPot = new System.Windows.Forms.Label();
+            this.btRes = new System.Windows.Forms.Button();
+            this.btnCall = new System.Windows.Forms.Button();
+            this.btnFold = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lOpMoney = new System.Windows.Forms.Label();
+            this.lAiMove = new System.Windows.Forms.Label();
+            this.lPhase = new System.Windows.Forms.Label();
+            this.btnWin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.gbOutput.SuspendLayout();
@@ -273,11 +286,147 @@
             this.comboBox1.TabIndex = 20;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lAiMoney
+            // 
+            this.lAiMoney.AutoSize = true;
+            this.lAiMoney.Location = new System.Drawing.Point(13, 409);
+            this.lAiMoney.Name = "lAiMoney";
+            this.lAiMoney.Size = new System.Drawing.Size(35, 13);
+            this.lAiMoney.TabIndex = 21;
+            this.lAiMoney.Text = "label1";
+            this.lAiMoney.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lAiMaxBet
+            // 
+            this.lAiMaxBet.AutoSize = true;
+            this.lAiMaxBet.Location = new System.Drawing.Point(13, 433);
+            this.lAiMaxBet.Name = "lAiMaxBet";
+            this.lAiMaxBet.Size = new System.Drawing.Size(35, 13);
+            this.lAiMaxBet.TabIndex = 22;
+            this.lAiMaxBet.Text = "label1";
+            // 
+            // btnRaise
+            // 
+            this.btnRaise.Location = new System.Drawing.Point(312, 345);
+            this.btnRaise.Name = "btnRaise";
+            this.btnRaise.Size = new System.Drawing.Size(75, 23);
+            this.btnRaise.TabIndex = 23;
+            this.btnRaise.Text = "Raise";
+            this.btnRaise.UseVisualStyleBackColor = true;
+            this.btnRaise.Click += new System.EventHandler(this.btnRaise_Click);
+            // 
+            // tbRaise
+            // 
+            this.tbRaise.Location = new System.Drawing.Point(393, 347);
+            this.tbRaise.Name = "tbRaise";
+            this.tbRaise.Size = new System.Drawing.Size(100, 20);
+            this.tbRaise.TabIndex = 24;
+            // 
+            // lPot
+            // 
+            this.lPot.AutoSize = true;
+            this.lPot.Location = new System.Drawing.Point(499, 350);
+            this.lPot.Name = "lPot";
+            this.lPot.Size = new System.Drawing.Size(35, 13);
+            this.lPot.TabIndex = 25;
+            this.lPot.Text = "label1";
+            this.lPot.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // btRes
+            // 
+            this.btRes.Location = new System.Drawing.Point(312, 316);
+            this.btRes.Name = "btRes";
+            this.btRes.Size = new System.Drawing.Size(75, 23);
+            this.btRes.TabIndex = 26;
+            this.btRes.Text = "Reset";
+            this.btRes.UseVisualStyleBackColor = true;
+            this.btRes.Click += new System.EventHandler(this.btRes_Click);
+            // 
+            // btnCall
+            // 
+            this.btnCall.Location = new System.Drawing.Point(312, 372);
+            this.btnCall.Name = "btnCall";
+            this.btnCall.Size = new System.Drawing.Size(75, 23);
+            this.btnCall.TabIndex = 27;
+            this.btnCall.Text = "Call";
+            this.btnCall.UseVisualStyleBackColor = true;
+            this.btnCall.Click += new System.EventHandler(this.btnCall_Click);
+            // 
+            // btnFold
+            // 
+            this.btnFold.Location = new System.Drawing.Point(312, 399);
+            this.btnFold.Name = "btnFold";
+            this.btnFold.Size = new System.Drawing.Size(75, 23);
+            this.btnFold.TabIndex = 28;
+            this.btnFold.Text = "Fold";
+            this.btnFold.UseVisualStyleBackColor = true;
+            this.btnFold.Click += new System.EventHandler(this.btnFold_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(109, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "lAiMoney";
+            // 
+            // lOpMoney
+            // 
+            this.lOpMoney.AutoSize = true;
+            this.lOpMoney.Location = new System.Drawing.Point(499, 321);
+            this.lOpMoney.Name = "lOpMoney";
+            this.lOpMoney.Size = new System.Drawing.Size(55, 13);
+            this.lOpMoney.TabIndex = 31;
+            this.lOpMoney.Text = "lOpMoney";
+            this.lOpMoney.Click += new System.EventHandler(this.lOpMoney_Click);
+            // 
+            // lAiMove
+            // 
+            this.lAiMove.AutoSize = true;
+            this.lAiMove.Location = new System.Drawing.Point(499, 409);
+            this.lAiMove.Name = "lAiMove";
+            this.lAiMove.Size = new System.Drawing.Size(35, 13);
+            this.lAiMove.TabIndex = 32;
+            this.lAiMove.Text = "label1";
+            // 
+            // lPhase
+            // 
+            this.lPhase.AutoSize = true;
+            this.lPhase.Location = new System.Drawing.Point(499, 433);
+            this.lPhase.Name = "lPhase";
+            this.lPhase.Size = new System.Drawing.Size(35, 13);
+            this.lPhase.TabIndex = 33;
+            this.lPhase.Text = "label1";
+            // 
+            // btnWin
+            // 
+            this.btnWin.Location = new System.Drawing.Point(312, 428);
+            this.btnWin.Name = "btnWin";
+            this.btnWin.Size = new System.Drawing.Size(75, 23);
+            this.btnWin.TabIndex = 34;
+            this.btnWin.Text = "Win";
+            this.btnWin.UseVisualStyleBackColor = true;
+            this.btnWin.Click += new System.EventHandler(this.btnWin_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnWin);
+            this.Controls.Add(this.lPhase);
+            this.Controls.Add(this.lAiMove);
+            this.Controls.Add(this.lOpMoney);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnFold);
+            this.Controls.Add(this.btnCall);
+            this.Controls.Add(this.btRes);
+            this.Controls.Add(this.lPot);
+            this.Controls.Add(this.tbRaise);
+            this.Controls.Add(this.btnRaise);
+            this.Controls.Add(this.lAiMaxBet);
+            this.Controls.Add(this.lAiMoney);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lChangeCards);
             this.Controls.Add(this.lHandName);
@@ -338,6 +487,19 @@
         private System.Windows.Forms.Label lHandName;
         private System.Windows.Forms.Label lChangeCards;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lAiMoney;
+        private System.Windows.Forms.Label lAiMaxBet;
+        private System.Windows.Forms.Button btnRaise;
+        private System.Windows.Forms.TextBox tbRaise;
+        private System.Windows.Forms.Label lPot;
+        private System.Windows.Forms.Button btRes;
+        private System.Windows.Forms.Button btnCall;
+        private System.Windows.Forms.Button btnFold;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lOpMoney;
+        private System.Windows.Forms.Label lAiMove;
+        private System.Windows.Forms.Label lPhase;
+        private System.Windows.Forms.Button btnWin;
     }
 }
 
