@@ -13,7 +13,8 @@ using Microsoft.Scripting.Hosting;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
-
+using System.IO;
+using System.Diagnostics;
 
 namespace PokerBot
 {
@@ -53,6 +54,8 @@ namespace PokerBot
             {
                 FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[cbCameras.SelectedIndex].MonikerString);
                 FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
+                FinalVideo.VideoResolution = FinalVideo.VideoCapabilities[0];
+                if (FinalVideo.ProvideSnapshots) FinalVideo.SnapshotResolution = FinalVideo.SnapshotCapabilities[0];
                 FinalVideo.Start();
                 connectControls();
             }
@@ -106,20 +109,27 @@ namespace PokerBot
         }
         
         private void btnRecognize_Click(object sender, EventArgs e)
-        {            
+        {
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = (@"C:\Users\Bane Vezilic\Anaconda2\python.exe");//cmd is full path to python.exe
+            start.Arguments = (@"..\..\OCR\PokerBot.py"); //args is path to .py file and any cmd line args
+            start.UseShellExecute = false;
+            start.RedirectStandardOutput = true;
+            Process process = Process.Start(start);
+
             String hand = System.IO.File.ReadAllText(@"..\..\OCR\hand.txt");
             tbHand.Tag = hand;
 
             String text = "";
             foreach (char c in hand)
             {
-                if (c == 'S')
+                if (c == 's')
                     text += '\u2660';
-                else if (c == 'H')
+                else if (c == 'h')
                     text += '\u2661';
-                else if (c == 'D')
+                else if (c == 'd')
                     text += '\u2662';
-                else if (c == 'C')
+                else if (c == 'c')
                     text += '\u2663';
                 else
                     text += c;

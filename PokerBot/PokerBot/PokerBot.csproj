@@ -114,7 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="OCR\PokerBot.ipynb" />
+    <None Include="OCR\PokerBot.py" />
+    <None Include="OCR\suit_weights" />
+    <None Include="OCR\value_weights" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,7 +138,6 @@
     <Content Include="lib\Microsoft.Dynamic.dll" />
     <Content Include="lib\Microsoft.Scripting.dll" />
     <Content Include="OCR\hand.txt" />
-    <Content Include="OCR\train.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

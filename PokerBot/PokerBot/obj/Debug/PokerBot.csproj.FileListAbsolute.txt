@@ -40,3 +40,8 @@ C:\Users\STOLE\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerB
 C:\Users\STOLE\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.MainForm.resources
 C:\Users\STOLE\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.Properties.Resources.resources
 C:\Users\STOLE\Documents\GitHub\soft-projekat\PokerBot\PokerBot\obj\Debug\PokerBot.csproj.GenerateResource.Cache
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\IronPython.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\Microsoft.Scripting.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\Bane Vezilic\Documents\GitHub\soft-projekat\PokerBot\PokerBot\bin\Debug\Microsoft.Scripting.Metadata.xml
