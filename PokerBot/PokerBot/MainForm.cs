@@ -112,10 +112,17 @@ namespace PokerBot
         {
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = (@"C:\Users\Bane Vezilic\Anaconda2\python.exe");//cmd is full path to python.exe
-            start.Arguments = (@"..\..\OCR\PokerBot.py"); //args is path to .py file and any cmd line args
+            start.Arguments = (@"..\..\OCR\test.py"); //args is path to .py file and any cmd line args
             start.UseShellExecute = false;
             start.RedirectStandardOutput = true;
-            Process process = Process.Start(start);
+            using (Process process = Process.Start(start))
+            {
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                }
+            }
 
             String hand = System.IO.File.ReadAllText(@"..\..\OCR\hand.txt");
             tbHand.Tag = hand;
