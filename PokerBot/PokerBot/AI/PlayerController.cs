@@ -157,14 +157,11 @@ public class PlayerController
 
         int retVal = 0;
 
-        
-
         #region Modifiers
         double moneyModifier = ((Player.Money - opMoney) / (Player.Money + opMoney)) * 10;
         double aiMoodModifier = 0;
-        double handModifier = (double)(EvaluateHand() / 1000000) * 5;
-        double halfValueModifier = (1-(double)aiCurBet/((double)maxBet/2))*100;
-        double maxValueModifier = (1 - (double)aiCurBet / (maxBet)) * 100;
+        double handModifier = (double)Math.Pow(3,(EvaluateHand() / 1000000));
+        
         double alMoodFactor = 0;
         switch (Player.Mood)
         {
@@ -183,15 +180,12 @@ public class PlayerController
 
         }
         int aiBet = (int)(maxBet * alMoodFactor);
+        double halfValueModifier = (1 - (double)(aiBet + aiCurBet + opBet) / ((double)(maxBet * 3) / 4)) * 100;
+        double maxValueModifier = (1 + ((double)aiMoodModifier/100) - (double)(aiBet + aiCurBet + opBet) / (maxBet)) * 100; 
 
         double betModifier = moneyModifier + aiMoodModifier + handModifier + (isFirstPhase?halfValueModifier:maxValueModifier);
-
-
-
         #endregion
 
-        
-        
         if (betModifier > 50)
         {
             retVal = aiBet+opBet;
@@ -213,4 +207,4 @@ public class PlayerController
         return retVal;
     }
     #endregion
-}//c,3 h,k h,2 s,3 d,2
+}//h,3 c,3 d,3 d,a h,10

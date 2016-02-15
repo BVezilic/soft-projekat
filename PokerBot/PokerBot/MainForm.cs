@@ -27,6 +27,7 @@ namespace PokerBot
         private Player oponent = new Player(20000, Mood.neutral);
         private FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
+        private int aiMaxBet = 0;
         
         public MainForm()
         {
@@ -145,7 +146,7 @@ namespace PokerBot
 
             player.Mood = (Mood)(int)(rnd.Next(0,3));
 
-            pc = new PlayerController(hand, player);
+            pc.PlayerHand = hand; 
             int forSwithc = hand.EvaluateHand();
             lHandVal.Text = forSwithc.ToString();
 
@@ -202,7 +203,10 @@ namespace PokerBot
 
             lChangeCards.Text = handName;
             lAiMoney.Text = pc.Player.Money.ToString();
-            lAiMaxBet.Text = pc.EvaluateMaxBet().ToString();
+            if (isFirstPhase)
+            {
+                lAiMaxBet.Text = pc.EvaluateMaxBet().ToString();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -231,30 +235,33 @@ namespace PokerBot
             lOpMoney.Text = oponent.Money.ToString();
             isFirstPhase = true;
             lPhase.Text = isFirstPhase.ToString();
-            
+            pc = new PlayerController(new Hand(), player);
+
         }
 
         private void btnRaise_Click(object sender, EventArgs e)
         {
-            int opBet = this.aiBet + int.Parse(tbRaise.Text);
+            int opBet = int.Parse(tbRaise.Text);
 
             oponent.Money -= opBet;
-            pot += opBet;
-            int aiBet = pc.makeBet(0, oponent.Money, opBet, isFirstPhase);
+            pot += opBet + this.aiBet;
+            this.aiBet = pc.makeBet(0, oponent.Money, opBet, isFirstPhase);
 
             if (aiBet == opBet)
             {
                 lAiMove.Text = "Call";
                 isFirstPhase = false;
                 lPhase.Text = isFirstPhase.ToString();
-                pot = aiBet;
+                pot += this.aiBet;
                 lPot.Text = pot.ToString();
+                
                 return;
             }
             if (aiBet == 0)
             {
                 oponent.Money += pot;
                 pot = 0;
+
                 lAiMove.Text = "Fold";
                 isFirstPhase = true;
                 lPhase.Text = isFirstPhase.ToString();
@@ -264,7 +271,7 @@ namespace PokerBot
                 lPot.Text = pot.ToString();
                 return;
             }
-            pot += aiBet;
+            pot += this.aiBet;
             lPot.Text = pot.ToString();
             lAiMove.Text = "Raise " + aiBet.ToString();
         }

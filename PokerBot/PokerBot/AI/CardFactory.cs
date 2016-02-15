@@ -18,7 +18,7 @@ public class CardFactory
         foreach (string card in cardCollection)
         {
             string[] vals = card.Split(',');
-            tempSuit = (Suit)Enum.Parse(typeof(Suit), vals[0]);
+            tempSuit = (Suit)Enum.Parse(typeof(Suit), vals[0], true);
             tempValue = (Value)Enum.Parse(typeof(Value), vals[1]);
             retVal.Add(new Card(tempSuit,tempValue));
           
@@ -29,4 +29,4 @@ public class CardFactory
     }
     #endregion
 
-}
+}//h,9 h,10 h,j h,q h,k

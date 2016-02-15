@@ -39,8 +39,6 @@
             this.tbHand = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDeal = new System.Windows.Forms.Button();
-            this.gbOutput = new System.Windows.Forms.GroupBox();
-            this.rtbOutput = new System.Windows.Forms.RichTextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.gbMood = new System.Windows.Forms.GroupBox();
             this.pbMood = new System.Windows.Forms.PictureBox();
@@ -66,7 +64,6 @@
             this.btnWin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
-            this.gbOutput.SuspendLayout();
             this.gbMood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMood)).BeginInit();
             this.SuspendLayout();
@@ -172,25 +169,6 @@
             this.btnDeal.Text = "Deal cards";
             this.btnDeal.UseVisualStyleBackColor = true;
             // 
-            // gbOutput
-            // 
-            this.gbOutput.Controls.Add(this.rtbOutput);
-            this.gbOutput.Location = new System.Drawing.Point(13, 470);
-            this.gbOutput.Name = "gbOutput";
-            this.gbOutput.Size = new System.Drawing.Size(610, 82);
-            this.gbOutput.TabIndex = 12;
-            this.gbOutput.TabStop = false;
-            this.gbOutput.Text = "Output";
-            // 
-            // rtbOutput
-            // 
-            this.rtbOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbOutput.Location = new System.Drawing.Point(3, 16);
-            this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(604, 63);
-            this.rtbOutput.TabIndex = 0;
-            this.rtbOutput.Text = "";
-            // 
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(629, 272);
@@ -203,9 +181,9 @@
             // gbMood
             // 
             this.gbMood.Controls.Add(this.pbMood);
-            this.gbMood.Location = new System.Drawing.Point(629, 470);
+            this.gbMood.Location = new System.Drawing.Point(629, 316);
             this.gbMood.Name = "gbMood";
-            this.gbMood.Size = new System.Drawing.Size(143, 82);
+            this.gbMood.Size = new System.Drawing.Size(143, 236);
             this.gbMood.TabIndex = 13;
             this.gbMood.TabStop = false;
             this.gbMood.Text = "Mood";
@@ -216,7 +194,7 @@
             this.pbMood.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbMood.Location = new System.Drawing.Point(3, 16);
             this.pbMood.Name = "pbMood";
-            this.pbMood.Size = new System.Drawing.Size(137, 63);
+            this.pbMood.Size = new System.Drawing.Size(137, 217);
             this.pbMood.TabIndex = 0;
             this.pbMood.TabStop = false;
             // 
@@ -384,7 +362,7 @@
             // lAiMove
             // 
             this.lAiMove.AutoSize = true;
-            this.lAiMove.Location = new System.Drawing.Point(499, 409);
+            this.lAiMove.Location = new System.Drawing.Point(13, 514);
             this.lAiMove.Name = "lAiMove";
             this.lAiMove.Size = new System.Drawing.Size(35, 13);
             this.lAiMove.TabIndex = 32;
@@ -393,7 +371,7 @@
             // lPhase
             // 
             this.lPhase.AutoSize = true;
-            this.lPhase.Location = new System.Drawing.Point(499, 433);
+            this.lPhase.Location = new System.Drawing.Point(13, 501);
             this.lPhase.Name = "lPhase";
             this.lPhase.Size = new System.Drawing.Size(35, 13);
             this.lPhase.TabIndex = 33;
@@ -436,7 +414,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.gbMood);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.gbOutput);
             this.Controls.Add(this.btnDeal);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.tbHand);
@@ -455,7 +432,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
-            this.gbOutput.ResumeLayout(false);
             this.gbMood.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMood)).EndInit();
             this.ResumeLayout(false);
@@ -475,8 +451,6 @@
         private System.Windows.Forms.TextBox tbHand;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDeal;
-        private System.Windows.Forms.GroupBox gbOutput;
-        private System.Windows.Forms.RichTextBox rtbOutput;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.GroupBox gbMood;
         private System.Windows.Forms.PictureBox pbMood;
