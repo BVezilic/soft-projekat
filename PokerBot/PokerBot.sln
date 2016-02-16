@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerBot", "PokerBot\PokerBot.csproj", "{D1350DA3-EEFE-4461-ABFD-76061BF71E3F}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "OCR_examples", "OCR_examples\OCR_examples.pyproj", "{D5BC7599-A72E-4E8E-8881-CE11CAB47816}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{D1350DA3-EEFE-4461-ABFD-76061BF71E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1350DA3-EEFE-4461-ABFD-76061BF71E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1350DA3-EEFE-4461-ABFD-76061BF71E3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BC7599-A72E-4E8E-8881-CE11CAB47816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BC7599-A72E-4E8E-8881-CE11CAB47816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
