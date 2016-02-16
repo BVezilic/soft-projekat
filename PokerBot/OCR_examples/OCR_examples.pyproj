@@ -32,6 +32,9 @@
     <Content Include="suit_weights" />
     <Content Include="test\test1.jpg" />
     <Content Include="test\test2.jpg" />
+    <Content Include="test\test3.jpg" />
+    <Content Include="test\test4.jpg" />
+    <Content Include="test\test5.jpg" />
     <Content Include="value_weights" />
   </ItemGroup>
   <PropertyGroup>
