@@ -77,16 +77,28 @@ def display_result(outputs, alphabet):
         result.append(alphabet[winner(output)])
     return result
 
+def find_error(inputs):
+    error = []
+    for i in inputs:
+        if sum(i) == 0:
+            error.append(True)
+        else:
+            error.append(False)
+    return error
+    
 def clear_file():
     file = open('hand.txt','w')
     file.write('')
     file.close()
 
-def write_hand(result):
+def write_hand(result,error):
     hand = ''
     for j in range(0,len(result[0])):
         for i in range(0,len(result)):
-            hand += result[i][j]
+            if error[i][j] == True:
+                hand += '?'
+            else:
+                hand += result[i][j]
             if i == 0:
                 hand += ','
         if j < len(result[0])-1:
@@ -94,7 +106,7 @@ def write_hand(result):
         
     file = open('hand.txt','a')
     file.write(hand)
-    file.write('\n')
+    file.write('\n\n')
     file.close()
     
 def rectify(h):
@@ -125,8 +137,8 @@ def select_suit(card, size, cardtype):
             contours.append(image_bin(resize_region(region)))
          
     if len(contours) < 2:
-        print 'NISAM USPEO DA NADJEM DVE KONTURE!'
-        return False
+        #print 'NISAM USPEO DA NADJEM DVE KONTURE!'
+        return np.zeros((28,28))
     
     return contours[cardtype]
     
@@ -152,8 +164,8 @@ def select_roi(image_orig, img_bin, cardtype, numcards=5):
         
     return img, contours
     
-alphabet_suit = ['d','h','s','c']
-alphabet_value = ['a','2','3','4','5','6','7','8','9','10','j','q','k']
+alphabet_suit = ['D','H','S','C']
+alphabet_value = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 
 ann_suit = create_ann_suit()
@@ -165,20 +177,26 @@ ann_value.load_weights('value_weights')
 ann_value.compile(loss='mean_squared_error', optimizer=sgd)
 
 clear_file()
-files = ['test1.jpg','test2.jpg']
+files = ['test1.jpg','test2.jpg','test3.jpg','test4.jpg',
+'test5.jpg','test6.jpg','test8.jpg','test9.jpg', 'test11.jpg','test12.jpg']
 for file in files:
     image_color = load_image('test/'+file)
     img = edge_detect(image_gray(image_color))  
   
     final_result = []  
+    errors = []    
+    
+    image, values = select_roi(image_color, img, 1, 5)
+    inputs = prepare_for_ann(values)
+    errors.append(find_error(inputs))
+    result = ann_value.predict(np.array(inputs, np.float32))
+    final_result.append(display_result(result, alphabet_value))
+    
     image, suits = select_roi(image_color, img, 0, 5)
     inputs = prepare_for_ann(suits)
+    errors.append(find_error(inputs))
     result = ann_suit.predict(np.array(inputs, np.float32))
     final_result.append(display_result(result, alphabet_suit))
 
-    image, values = select_roi(image_color, img, 1, 5)
-    inputs = prepare_for_ann(values)
-    result = ann_value.predict(np.array(inputs, np.float32))
-    final_result.append(display_result(result, alphabet_value))
 
-    write_hand(final_result)
+    write_hand(final_result, errors)
